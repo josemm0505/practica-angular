@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CardComponent } from './card/card.component';
 import { Pokemons } from './interfaces/pokemons';
 import { PokemonService } from './services/pokemon.service';
+import { PaginacionComponent } from './paginacion/paginacion.component';
 
 @Component({
   selector: 'app-pokemon',
   standalone: true,
-  imports: [CardComponent],
+  imports: [CardComponent, PaginacionComponent],
   templateUrl: './pokemon.component.html',
   styleUrl: './pokemon.component.css'
 })
@@ -25,6 +26,8 @@ export class PokemonComponent implements OnInit{
       pokemonsAll.results.forEach((pokemon)=>{
         this.srvPokemon.getpokemon(pokemon.name).subscribe((pokemonData)=>{
           pokemon.data = pokemonData;
+          this.srvPokemon.nextUrl = pokemonsAll.next;
+          this.srvPokemon.previousUrl = pokemonsAll.previous;
         });
       });
       this.pokemons = pokemonsAll;
@@ -33,5 +36,8 @@ export class PokemonComponent implements OnInit{
   );
   }
 
+  setNewPokemon(pokemonsNews: Pokemons):void{
+    this.pokemons = pokemonsNews;
+  }
 
 }
