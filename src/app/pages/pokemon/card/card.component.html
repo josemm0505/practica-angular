@@ -6,9 +6,6 @@
         <div class="card-body fixed-body">
           <h5 class="card-title">{{pokemon.name.toUpperCase()}}</h5>
           <p class="card-text">Experiencia Base: {{pokemon.data?.base_experience}}</p>
-          <p class="card-text">Altura: {{pokemon.data?.height}}</p>
-          <p class="card-text">Peso: {{pokemon.data?.weight}}</p>
-          <p class="card-text">Habilidades: {{pokemon.data?.abilities?.[0]?.ability?.name?.toUpperCase()}} - {{pokemon.data?.abilities?.[1]?.ability?.name?.toUpperCase()}}</p>
           <i class="btn btn-outline-primary" (click)="openModal(pokemon.data!)">Más Información</i>
         </div>
       </div>
