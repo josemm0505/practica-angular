@@ -9,7 +9,7 @@
           <p class="card-text">Altura: {{pokemon.data?.height}}</p>
           <p class="card-text">Peso: {{pokemon.data?.weight}}</p>
           <p class="card-text">Habilidades: {{pokemon.data?.abilities?.[0]?.ability?.name?.toUpperCase()}} - {{pokemon.data?.abilities?.[1]?.ability?.name?.toUpperCase()}}</p>
-          <a [href]="pokemon.url" class="btn btn-primary">Más Información</a>
+          <i class="btn btn-outline-primary" (click)="openModal(pokemon.data!)">Más Información</i>
         </div>
       </div>
     </div>
@@ -22,3 +22,4 @@
     </div>
   </ng-template>
 </div>
+<pokemon-modal />

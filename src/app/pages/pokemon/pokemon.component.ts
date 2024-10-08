@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { CardComponent } from './card/card.component';
 import { Pokemons} from './interfaces/pokemons';
