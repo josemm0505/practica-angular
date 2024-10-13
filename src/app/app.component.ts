@@ -1,8 +1,7 @@
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { PaginacionComponent } from './pages/pokemon/paginacion/paginacion.component';
-import { CardComponent } from './pages/pokemon/card/card.component';
+
 
 @Component({
   selector: 'app-root',

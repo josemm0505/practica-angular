@@ -1,13 +1,14 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Pokemon, Pokemons } from '../interfaces/pokemons';
+import { Dbz, Item, Links, Meta } from '../interfaces/dbz';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PokemonService {
-  private apiUrlBase = 'https://pokeapi.co/api/v2/pokemon/';
+export class DbzService {
+  private apiUrlBase = 'https://dragonball-api.com/api/characters/';
   private next:string|null=null;
   private previous:string|null=null;
 
@@ -15,13 +16,18 @@ export class PokemonService {
     private http: HttpClient
   ) { }
 
-  getPokemon(url:string = this.apiUrlBase): Observable<Pokemons>{
-    return this.http.get<Pokemons>(url);
+  getDbz(url:string = this.apiUrlBase): Observable<Dbz>{
+    return this.http.get<Dbz>(url);
   }
 
-  getpokemon(termino: string|number): Observable<Pokemon>{
-    return this.http.get<Pokemon>(`${this.apiUrlBase}${termino}`);
-}
+  getdbz(termino: string|number): Observable<Item>{
+    return this.http.get<Item>(`${this.apiUrlBase}${termino}`);
+  }
+
+  getDbzLinks(enlace: any):Observable<Links>{
+    return this.http.get<Links>(enlace);
+  }
+
 
 set nextUrl(url:string|null){
   this.next=url;
