@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { DbzService } from './services/dbz.service';
 import {Dbz} from './interfaces/dbz';
-
+import { PaginacionComponent } from './paginacion/paginacion.component';
+import { CardComponent } from "./card/card.component";
+import { SearchComponent } from './search/search.component';
 @Component({
   selector: 'app-dbz',
   standalone: true,
-  //imports: [DbzComponent, CardComponent, PaginacionComponent,SearchComponent],
+  imports: [PaginacionComponent, CardComponent, SearchComponent],
   templateUrl: './dbz.component.html',
   styleUrl: './dbz.component.css'
 })
@@ -30,7 +32,7 @@ export class DbzComponent implements OnInit {
 
   setNewPersonaje(newPersonaje: Dbz): void {
     this.dbzPersonajes = newPersonaje
-    console.log(newPersonaje)
+    
   }
 
   searchPersonaje(termino: string): void {

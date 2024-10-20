@@ -2,7 +2,7 @@ import {Component, Output, EventEmitter} from "@angular/core";
 
 
 @Component({
-  selector: 'pokemon-search',
+  selector: 'dbz-search',
   standalone: true,
   imports: [],
   template: `
@@ -12,15 +12,15 @@ import {Component, Output, EventEmitter} from "@angular/core";
         #txtSearch
           type="text"
           class="form-control"
-          placeholder="Escribe el nombre del Pokemon"
-          aria-label="Escribe el nombre del Pokemon"
-          (keydown.enter)="searchPokemon(txtSearch.value)"
+          placeholder="Escribe el nombre del personaje"
+          aria-label="Escribe el nombre del personaje"
+          (keydown.enter)="searchDbz(txtSearch.value)"
           aria-describedby="button-addon2"
         />
         <button
           class="btn btn-outline-secondary"
           type="button"
-          (click)="searchPokemon(txtSearch.value)"
+          (click)="searchDbz(txtSearch.value)"
           id="button-addon2"
         >
         <i class="bi bi-search"></i>
@@ -33,7 +33,7 @@ import {Component, Output, EventEmitter} from "@angular/core";
 export class SearchComponent {
 
     @Output() public eventSearch = new EventEmitter<string>();
-    searchPokemon(termino: string|number):void {
+    searchDbz(termino: string|number):void {
          const termSearch=termino.toString().trim();
 //        if(termSearch.length === 0){
 //            return;
