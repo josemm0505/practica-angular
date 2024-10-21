@@ -1,1 +1,7 @@
-<p>cocteles works!</p>
+
+<div class="row">
+    <cocteles-search (eventEmitTermino)="searchCoctel($event)"/>
+</div>
+<cocteles-paginacion (eventNewCocteles)="setNewCocteles($event)"/>
+<cocteles-card [cocteles]="coctelAll"></cocteles-card>
+<cocteles-paginacion (eventNewCocteles)="setNewCocteles($event)"/>

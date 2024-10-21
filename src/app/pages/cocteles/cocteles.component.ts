@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Cocteles } from './interfaces/cocteles';
 import { CoctelService } from './services/cocteles.service';
+import { CardComponent } from "./card/card.component";
+import { PaginacionComponent } from './paginacion/paginacion.component';
+import { SearchComponent } from './search/search.component';
 
 
 @Component({
   selector: 'app-cocteles',
   standalone: true,
-  imports: [],
+  imports: [CardComponent, PaginacionComponent, SearchComponent],
   templateUrl: './cocteles.component.html',
   styleUrl: './cocteles.component.css',
 })
@@ -38,11 +41,11 @@ export class CoctelesComponent implements OnInit {
     if (termin) {
       let numero = Number(termin)
       if(!isNaN(numero)){
-        this._srvCocteles.getcoctelId(numero).subscribe(coctel =>{
+        this._srvCocteles.getCoctelId(numero).subscribe(coctel =>{
           this.coctelAll = coctel
         })
       }else{
-        this._srvCocteles.getcostelEncontrado(termin).subscribe(coctel => {
+        this._srvCocteles.getCoctelEncontrado(termin).subscribe(coctel => {
           this.coctelAll = coctel
         })
       }

@@ -14,7 +14,7 @@ export class CoctelService {
     private http:HttpClient
   ) { }
 
-  getcocteles():Observable<Cocteles>{
+  getCocteles():Observable<Cocteles>{
     return this.http.get<Cocteles>(`${this.coctel}a`)
   }
 
@@ -22,11 +22,11 @@ export class CoctelService {
     return this.http.get<Cocteles>(`${this.coctel}${letra}`)
   }
 
-  getcostelEncontrado(cocTermino:string):Observable<Cocteles>{
+  getCoctelEncontrado(cocTermino:string):Observable<Cocteles>{
     return this.http.get<Cocteles>(`${this.coctelSearch}${cocTermino}`)
   }
 
-  getcoctelId(cocId:number):Observable<Cocteles>{
+  getCoctelId(cocId:number):Observable<Cocteles>{
     return this.http.get<Cocteles>(`${this.coctelId}${cocId}`)
   }
 
