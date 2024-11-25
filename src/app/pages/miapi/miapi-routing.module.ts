@@ -7,9 +7,9 @@ import { JujutsuEditarComponent } from './pages/jujutsu-editar/jujutsu-editar.co
 
 const routes: Routes = [
   {path: '', redirectTo: 'list', pathMatch: 'full'},
-  {path:'list', component:ListMiapiComponent, pathMatch:'full'},
-  {path:'new', component:JujutsuNuevoComponent, pathMatch:'full'},
-  {path:'edit', component:JujutsuEditarComponent, pathMatch:'full'}
+  {path:'list', component:ListMiapiComponent},
+  {path:'new', component:JujutsuNuevoComponent},
+  {path:'edit/:id', component:JujutsuEditarComponent}
 ];
 
 @NgModule({
