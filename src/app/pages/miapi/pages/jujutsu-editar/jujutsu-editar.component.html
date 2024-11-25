@@ -3,7 +3,7 @@
         class="img-fluid">
 </div>
 
-<form [formGroup]="editarForm"  >
+<form  [formGroup]="editarForm" (ngSubmit)="postForm()" >
     <div class="form-group col-12">
         <label for="exampleFormControlInput1">Id</label>
         <input type="text" class="form-control" placeholder="Id" formControlName="_id" readonly>
@@ -11,7 +11,9 @@
     <div class="row">
         <div class="form-group col-6">
             <label for="exampleFormControlInput1">Nombre</label>
-            <input type="text" class="form-control" placeholder="Escriba el nombre" formControlName="nombre">
+            <input type="text" class="form-control" placeholder="Escriba el nombre" formControlName="nombre"
+            value="15"
+            >
         </div>
     
         <div class="form-group col-6">
@@ -79,7 +81,7 @@
             <button
                 type="submit"
                 class="btn btn-outline-warning"
-                (ngSubmit)="postForm(editarForm.value)"
+                
             >
                 Actualizar
             </button>

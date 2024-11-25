@@ -3,13 +3,13 @@ import { RouterLink } from '@angular/router';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Jujutsu, listaJujutsu } from '../interfaces/jujutsu';
 import { MiapiService } from '../services/miapi.service';
-import {FormGroup,FormControl, Validators, ReactiveFormsModule } from '@angular/forms'
+import {FormGroup,FormControl, Validators, ReactiveFormsModule, FormsModule, NgModel } from '@angular/forms'
 import { __values } from 'tslib';
 
 @Component({
   selector: 'app-jujutsu-editar',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule ],
+  imports: [RouterLink, ReactiveFormsModule, FormsModule ],
   templateUrl: './jujutsu-editar.component.html',
   styleUrl: './jujutsu-editar.component.css'
 })
@@ -63,7 +63,8 @@ export class JujutsuEditarComponent implements OnInit{
     
   }
 
-  postForm(form:Jujutsu):void{
+  postForm():void{
+    console.log(this.editarForm.value)
     const formulario = this.editarForm.value;
     console.log(formulario);
   }
