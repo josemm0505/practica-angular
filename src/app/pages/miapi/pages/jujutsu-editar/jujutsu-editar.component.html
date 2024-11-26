@@ -81,6 +81,7 @@
             <button
                 type="submit"
                 class="btn btn-outline-warning"
+                [routerLink]="['/miapi/list']" routerLinkActive="router-link-active"
                 
             >
                 Actualizar
@@ -93,6 +94,16 @@
                 [routerLink]="['/miapi/list']" routerLinkActive="router-link-active" 
             >
                 Cancelar
+            </button>
+        </div>
+        <div class="col-1 mb-3">
+            <button
+                type="button"
+                class="btn btn-outline-danger"
+                (click)="deleteForm()"
+                [routerLink]="['/miapi/list']" routerLinkActive="router-link-active" 
+            >
+                Eliminar
             </button>
         </div>
     </div>

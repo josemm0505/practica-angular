@@ -20,7 +20,15 @@ export class MiapiService {
     return this.http.get<Jujutsu>(`${this.urlBase}/${id}`);
   }
 
-  putJujutsu(form:Jujutsu):Observable<Jujutsu>{
+  putJujutsu(form:any):Observable<Jujutsu>{
     return this.http.put<Jujutsu>(`${this.urlBase}/${form._id}`, form);
+  }
+
+  deleteJujutsu(form:any):Observable<Jujutsu>{
+    return this.http.delete<Jujutsu>(`${this.urlBase}/${form._id}`);
+  }
+
+  postJujutsu(form:any):Observable<Jujutsu>{
+    return this.http.post<Jujutsu>(`${this.urlBase}/`, form);
   }
 }

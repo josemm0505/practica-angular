@@ -64,9 +64,15 @@ export class JujutsuEditarComponent implements OnInit{
   }
 
   postForm():void{
-    console.log(this.editarForm.value)
-    const formulario = this.editarForm.value;
-    console.log(formulario);
+    this.api.putJujutsu(this.editarForm.value).subscribe(data =>{
+      console.log(this.editarForm.value);
+    });
+  }
+
+  deleteForm():void{
+    this.api.deleteJujutsu(this.editarForm.value).subscribe(data =>{
+      console.log(this.editarForm.value);
+    });
   }
   
 }

@@ -3,133 +3,102 @@
         class="img-fluid">
 </div>
 
-<div class="container-fluid">
-    <div class="row row-cols-4">
-        <div class="col-12">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Id: </span>
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
+<div class="container">
+
+    <form  [formGroup]="nuevoForm" (ngSubmit)="postForm()" >
+
+        <div class="row">
+            <div class="form-group col-6">
+                <label for="exampleFormControlInput1">Nombre</label>
+                <input type="text" class="form-control" placeholder="Escriba el nombre" formControlName="nombre"
+                value="15"
+                >
+            </div>
+        
+            <div class="form-group col-6">
+                <label for="exampleFormControlInput1">Kanji</label>
+                <input type="text" class="form-control" placeholder="Escriba el Kanji" formControlName="kanji">
+            </div>
+            <div class="form-group col-6">
+                <label for="exampleFormControlInput1">Higarana</label>
+                <input type="text" class="form-control" placeholder="Escriba el higarana" formControlName="hiragana">
+            </div>
+        
+            <div class="form-group col-6">
+                <label for="exampleFormControlInput1">Romaji</label>
+                <input type="text" class="form-control" placeholder="Escriba el Romaji" formControlName="romaji">
             </div>
         </div>
-
-        <div class="col-6">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Nombre: </span>
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
+    
+        <div class="row">
+            <div class="form-group col-2">
+                <label for="exampleFormControlInput1">Especie</label>
+                <input type="text" class="form-control" placeholder="Escriba la especie" formControlName="especie">
+            </div>
+        
+            <div class="form-group col-2">
+                <label for="exampleFormControlInput1">Genero</label>
+                <input type="text" class="form-control" placeholder="Escriba el genero" formControlName="genero">
+            </div>
+        
+            <div class="form-group col-2">
+                <label for="exampleFormControlInput1">Edad</label>
+                <input type="text" class="form-control" placeholder="Escriba la edad" formControlName="edad">
+            </div>
+    
+            <div class="form-group col-6">
+                <label for="exampleFormControlInput1">Grado</label>
+                <input type="text" class="form-control" placeholder="Escriba el grado" formControlName="grado">
+            </div>
+        
+            <div class="form-group col-6">
+                <label for="exampleFormControlInput1">Afiliacion</label>
+                <input type="text" class="form-control" placeholder="Escriba la afiliacion" formControlName="afiliacion">
+            </div>
+        
+            <div class="form-group col-6">
+                <label for="exampleFormControlInput1">Ocupacion</label>
+                <input type="text" class="form-control" placeholder="Escriba las ocupaciones, separadas de comas" formControlName="ocupacion">
+            </div>
+        
+        </div>
+    
+        <div class="row">
+            <div class="form-group col-6">
+                <label for="exampleFormControlInput1">Descripcion</label>
+                <input type="text" class="form-control" placeholder="Escriba una descripcion del personaje" formControlName="descripcion">
+            </div>
+        
+            <div class="form-group col-6 mb-3">
+                <label for="exampleFormControlInput1">Imagen</label>
+                <input type="text" class="form-control" placeholder="Inserte el enlace de una imagen(png)" formControlName="imagen">
             </div>
         </div>
-
-        <div class="col-6">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Kanji: </span>
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
+    
+        <div class="row gap-2 justify-content-md-end">
+            <div class="col-1 mb-3">
+                <button
+                    type="submit"
+                    class="btn btn-outline-success"
+                    [routerLink]="['/miapi/list']" routerLinkActive="router-link-active" 
+                >
+                    Guardar
+                </button>
+            </div>
+            <div class="col-1 mb-3">
+                <button
+                    type="button"
+                    class="btn btn-danger"
+                    [routerLink]="['/miapi/list']" routerLinkActive="router-link-active" 
+                >
+                    Cancelar
+                </button>
+            </div>
+            <div class="col-1 mb-3">
             </div>
         </div>
+    
+    
+    </form>
 
-        <div class="col-6">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Hiragana: </span>
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-            </div>
-        </div>
-
-        <div class="col-6">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Romaji: </span>
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Especie: </span>
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Género: </span>
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-            </div>
-        </div>
-
-        <div class="col-2">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Edad: </span>
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Afiliacion: </span>
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Ocupación: </span>
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-            </div>
-        </div>
-
-        <div class="col">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Grado: </span>
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-            </div>
-        </div>
-
-        <div class="col-6">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Descripcion: </span>
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-            </div>
-        </div>
-
-        <div class="col-6">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="inputGroup-sizing-default">Imagen: </span>
-                <input type="text" class="form-control" aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default">
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div class="botones">
-    <div class="row gap-2 justify-content-md-end">
-        <div class="col-1">
-            <button
-                type="button"
-                class="btn btn-success"
-            >
-                Guardar
-            </button>
-        </div>
-        <div class="col-1">
-            <button
-                type="button"
-                class="btn btn-danger"
-                [routerLink]="['/miapi/list']" routerLinkActive="router-link-active" 
-            >
-                Cancelar
-            </button>
-        </div>
-    </div>
 </div>
